@@ -1,0 +1,25 @@
+try:
+    # File Creation
+    with open("my_file.txt", "w") as file:
+        file.write("Hello, this is line 1\n")
+        file.write("This is line 2 with some numbers: 12345\n")
+        file.write("And this is line 3\n")
+
+    # File Reading and Display
+    with open("my_file.txt", "r") as file:
+        print("Contents of my_file.txt:")
+        for line in file:
+            print(line.strip())
+
+    # File Appending
+    with open("my_file.txt", "a") as file:
+        file.write("Appending line 4\n")
+        file.write("Appending line 5\n")
+        file.write("Appending line 6\n")
+
+except FileNotFoundError:
+    print("File not found.")
+except PermissionError:
+    print("Permission denied.")
+finally:
+    print("Execution complete.")
